@@ -1,3 +1,6 @@
+/**este archivo se encargara de manejar las rutas
+ * de ser necesario agregar mas es en este donde se crean
+ */
 'use strict'
 const express = require('express')
 
