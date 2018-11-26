@@ -15,8 +15,13 @@ api.get('/products/:productId', ProductsControler.getProduct)
 api.post('/products',auth , ProductsControler.saveProducts)
 api.put('/products/:productId',auth , ProductsControler.updateProduct)
 api.delete('/products/:productId',auth , ProductsControler.deleteProduct)
-/**para probar la logica del token */
+/**para probar la logica del token
 api.get('/testToken', auth, (req, res)=> {
     res.status(200).send({message: 'good!'})
-} )
+} ) */
+
+/**se implementan las rutas para crear usuarios */
+api.post('/singup', UsersControler.singUp)
+api.post('/singin', UsersControler.singIn)
+
 module.exports = api

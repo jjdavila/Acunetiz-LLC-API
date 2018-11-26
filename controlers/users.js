@@ -7,6 +7,7 @@ function singUp(req, res){
     const user = new User({
         email: req.body.email,
         role:  req.body.role,
+        password: req.body.password,
     })
    user.save((err) =>{
     if(err) res.status(500).send({message:`Error al crear el usuario ${err}`})
@@ -19,18 +20,24 @@ function singUp(req, res){
 }
 
 function singIn(req, res){
-    User.find({}, (err, user)  => { 
-        if(err) res.status(500).send({message: `Error al realizar la peticion ${err}`})
-        if(!user) res.status(404).send({message:`No existen productos ${err}`})
+
+    User.find({ email: req.body.email }, (err, user)  => { 
+        if (err) return res.status(500).send({ message: err })
+        if (!user) return res.status(404).send({ message: 'No existe el usuario' })
+
         req.user = user
+        console.log(user)
         res.status(200).send({
-            message: 'login correcto',
-            token: Service.createToken(user)
+        message: 'Te has logueado correctamente',
+        token: Service.createToken(user),
+        
         })
     })
+
+    User.fi
 }
 
 module.exports = {
     singUp,
-    singIn 
+    singIn,
 }   
