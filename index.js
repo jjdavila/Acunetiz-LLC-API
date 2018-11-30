@@ -2,7 +2,7 @@
 
 const mongoose = require('mongoose')
 const app = require('./app')
-const config = require('./config')
+const config = require('./config/config')
 
 /**se establece la consexion a la base de datos en mongodb
  * nombre de la base de datos: AcunetisAPI
