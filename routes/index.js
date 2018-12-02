@@ -13,7 +13,7 @@ const auth = require('../middlewares/auth')
 /**se crean las URLs products*/
 api.get('/products', ProductsControler.getProducts)
 api.get('/products/:productId', ProductsControler.getProduct)
-api.post('/products',auth , ProductsControler.saveProducts)
+api.post('/products', ProductsControler.saveProducts)
 api.put('/products/:productId',auth , ProductsControler.updateProduct)
 api.delete('/products/:productId',auth , ProductsControler.deleteProduct)
 

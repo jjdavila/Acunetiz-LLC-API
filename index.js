@@ -20,3 +20,6 @@ mongoose.connect(config.dataBase, (err, res) => {
     })
     
 })
+
+
+module.exports = app; // para usar en el testing
