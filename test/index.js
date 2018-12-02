@@ -35,7 +35,7 @@ describe('Products', () => {
       
   });
     /*
-    * /POST products
+    * Prueba unitaria para la operacion POST de products
     */
     describe('/POST products', () => {
         it('it debera probar guardar en la base de datos', (done) => {
